@@ -1,6 +1,5 @@
 import {router} from './index.js';
 import {authGoogle, authFacebook} from './loginByProvider.js';
-
 const closeSesion = () =>{
   firebase.auth().signOut().then(function(){
     console.log('Cerrando sesión');
@@ -12,11 +11,11 @@ const closeSesion = () =>{
 
 const profil = () =>{
   let main = document.querySelector('#main');
-  let user = 'Dors';
-
+  
+  let user = 'Eliza';
   let profilView = `
     <p>Welcome ${user}</p>
-    <p> Congratulations!! This is your personal account.</p>
+    <p> Congratulations!! This is your personal account</p>
     <input id="logout" type="button" value="Log out">
   `
   main.innerHTML = profilView;
@@ -24,7 +23,6 @@ const profil = () =>{
   let logout = document.querySelector("#logout");
   logout.addEventListener("click", closeSesion);
 }
-
 
 const getLoginData = () => {
 

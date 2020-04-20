@@ -10,10 +10,11 @@ export const authGoogle = () => {
   firebase.auth().signInWithPopup(provider)
   .then(function(result) {
     const usuario = {   
-            uid:result.user.uid,
-            nombre:result.user.displayName, 
-            email:result.user.email, 
-            foto:result.user.photoURL
+      name:result.user.displayName, 
+      email:result.user.email, 
+      photo:result.user.photoURL, 
+      description:'',
+      uid:result.user.uid
      }
      usersRef.doc(result.user.uid)
        .set(usuario);  
@@ -39,10 +40,11 @@ export const authFacebook = () => {
   firebase.auth().signInWithPopup(providerFace)
   .then(function(result) {
     const usuario = {   
-      uid:result.user.uid,
-      nombre:result.user.displayName, 
+      name:result.user.displayName, 
       email:result.user.email, 
-       foto:result.user.photoURL
+      photo:result.user.photoURL, 
+      description:'',
+      uid:result.user.uid
      }
      usersRef.doc(result.user.uid)
        .set(usuario);  
@@ -61,5 +63,20 @@ export const authFacebook = () => {
   });
 } 
 
+/**
+ *Process to enter facebook
+ */
+export const supplierDetails = () => {
+  const user = firebase.auth().currentUser;
 
+  if (user != null) {
+    user.providerData.forEach(function (profile) {
+      console.log("Sign-in provider: " + profile.providerId);
+      console.log("  Provider-specific UID: " + profile.uid);
+      console.log("  Name: " + profile.displayName);
+      console.log("  Email: " + profile.email);
+      console.log("  Photo URL: " + profile.photoURL);
+    });
+  }  
+} 
 

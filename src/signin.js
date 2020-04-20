@@ -1,20 +1,7 @@
 import User from "./user.js";
 import {router} from './index.js';
 
-/*
- export const firebaseConfig = {
-    apiKey: "AIzaSyAxz1HP9cPkI4VO2gXoj4GVnFxZK2kKUVw",
-    authDomain: "desarrolloweb-44294.firebaseapp.com",
-    databaseURL: "https://desarrolloweb-44294.firebaseio.com",
-    projectId: "desarrolloweb-44294",
-    storageBucket: "desarrolloweb-44294.appspot.com",
-    messagingSenderId: "236290236182",
-    appId: "1:236290236182:web:038028ae2f66e945743a37"
-  };
-
-firebase.initializeApp(firebaseConfig);*/
 let dataBase= firebase.firestore();
-
 
 function send() {
   let msgError = null;
@@ -28,12 +15,19 @@ function send() {
   // Validar datos
   if(saveName == null || saveName == '' || saveName == undefined ){
     msgError ="Completa el campo name";
+    showError(document.querySelector('#name'));
   }else if(saveLastName == null || saveLastName == '' || saveLastName == undefined){
     msgError ="Completa el campo Lastname";
+    showError(document.querySelector('#lastName'));
+  }else if(saveEmail == null || saveEmail == '' || saveEmail == undefined){
+    msgError ="Completa el campo email";
+    showError(document.querySelector('#email'));
   }else if(savePassword == null || savePassword == '' || savePassword == undefined){
     msgError ="Completa el campo password";
-  }else if(savePassword2 == null || savePassword2 == '' || savePassword2 == undefined){
+    showError(document.querySelector('#password'));
+  }else if(savePassword2 == null || savePassword2 == '' || savePassword2 == undefined ||savePassword != savePassword2 ){
     msgError ="Password no coicide";
+    showError(document.querySelector('#password2'));
   }
 
   if(msgError == null) {
@@ -57,6 +51,8 @@ export const renderSignin = () => {
       <input type="email" id="email" class="input" placeholder="Email">
       <input type="password" id="password" class="input" placeholder="Password">
       <input type="password" id="password2" class="input" placeholder="Confirm password">
+      <input type="hiden" id="descripcion" value="1">
+      <input type="hiden" id="photo" value="1">
       <span id="errorMsg"> Hay un error, verifica tus datos.</span>
       <input type="button" id="send" class="button" value="Sign in">
       <p>¿Ya tienes una cuenta? <u id="loginLink">Inicia sesión</u></p>
@@ -84,7 +80,14 @@ function registerAuthentication(usuario) {
       let errorMessage = error.message;
       console.log("Error: " + errorMessage);
   });
-} 
+}
+
+function showError(campo){
+  campo.style.border = "2px solid red";
+  document.querySelector('#errorMsg').style.display = "block";
+  setTimeout(function(){ campo.style.border = ""; 
+  document.querySelector('#errorMsg').style.display = "none";}, 2000);
+}
 
 function registerUser (usuario, data) {
   console.log(data.user.uid);
@@ -92,7 +95,9 @@ function registerUser (usuario, data) {
     "name": usuario.name,
     "lastName": usuario.lastName,
     "email": usuario.email,
-    "password": usuario.password
+    "password": usuario.password,
+    "description": usuario.description, 
+    "photo": usuario.photo
   })
   /*
   dataBase.collection("users").add({
