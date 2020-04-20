@@ -7,7 +7,8 @@ export default class User {
     description
     date
     photo
-    constructor(name,lastName,email,password,description,date,photo){
+    uid
+    constructor(name,lastName,email,password,description,date,photo,uid){
         this.name = name;
         this.lastName = lastName;
         this.email = email;
@@ -15,5 +16,6 @@ export default class User {
         this.description = description; 
         this.date = date; 
         this.photo = photo; 
+        this.uid = uid;
     }
 }

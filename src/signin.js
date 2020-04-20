@@ -99,7 +99,8 @@ function registerUser (usuario, data) {
     "password": usuario.password,
     "description": usuario.description,
     "date": usuario.date,  
-    "photo": usuario.photo
+    "photo": usuario.photo,
+    "uid":data.user.uid
   })
   /*
   dataBase.collection("users").add({

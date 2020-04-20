@@ -17,18 +17,19 @@ export const authGoogle = () => {
       password:'',
       description:'',
       date: new Date(),
-      photo:result.user.photoURL
+      photo:result.user.photoURL,
+      uid:result.user.uid
       }
-      console.log(usuario);
-      let uid = result.user.uid; 
-      usersRef.doc(uid).set({
+      let uid2 = result.user.uid; 
+      usersRef.doc(uid2).set({
         "name": usuario.name,
         "lastName": usuario.lastName,
         "email": usuario.email,
         "password": usuario.password,
         "description": usuario.description, 
         "date":usuario.date,
-        "photo": usuario.photo
+        "photo": usuario.photo, 
+        "uid":usuario.uid
       })
  })
  .catch(function(error) {
@@ -58,17 +59,19 @@ export const authFacebook = () => {
       password:'',
       description:'',
       date: new Date(),
-      photo:result.user.photoURL
+      photo:result.user.photoURL,
+      uid:result.user.uid
       }
-      let uid = result.user.uid; 
-      usersRef.doc(uid).set({
+      let uid2 = result.user.uid; 
+      usersRef.doc(uid2).set({
         "name": usuario.name,
         "lastName": usuario.lastName,
         "email": usuario.email,
         "password": usuario.password,
         "description": usuario.description, 
         "date":usuario.date,
-        "photo": usuario.photo
+        "photo": usuario.photo, 
+        "uid":usuario.uid
       })  
  })
   .catch(function(error) {
