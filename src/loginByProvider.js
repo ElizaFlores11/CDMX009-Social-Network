@@ -1,3 +1,4 @@
+import User from "./user.js";
 import {router} from './index.js';  
 
 const db = firebase.firestore();
@@ -11,13 +12,24 @@ export const authGoogle = () => {
   .then(function(result) {
     const usuario = {   
       name:result.user.displayName, 
+      lastName:'', 
       email:result.user.email, 
-      photo:result.user.photoURL, 
+      password:'',
       description:'',
-      uid:result.user.uid
-     }
-     usersRef.doc(result.user.uid)
-       .set(usuario);  
+      date: new Date(),
+      photo:result.user.photoURL
+      }
+      console.log(usuario);
+      let uid = result.user.uid; 
+      usersRef.doc(uid).set({
+        "name": usuario.name,
+        "lastName": usuario.lastName,
+        "email": usuario.email,
+        "password": usuario.password,
+        "description": usuario.description, 
+        "date":usuario.date,
+        "photo": usuario.photo
+      })
  })
  .catch(function(error) {
   console.log('Hay un error en Google');
@@ -41,13 +53,23 @@ export const authFacebook = () => {
   .then(function(result) {
     const usuario = {   
       name:result.user.displayName, 
+      lastName:'', 
       email:result.user.email, 
-      photo:result.user.photoURL, 
+      password:'',
       description:'',
-      uid:result.user.uid
-     }
-     usersRef.doc(result.user.uid)
-       .set(usuario);  
+      date: new Date(),
+      photo:result.user.photoURL
+      }
+      let uid = result.user.uid; 
+      usersRef.doc(uid).set({
+        "name": usuario.name,
+        "lastName": usuario.lastName,
+        "email": usuario.email,
+        "password": usuario.password,
+        "description": usuario.description, 
+        "date":usuario.date,
+        "photo": usuario.photo
+      })  
  })
   .catch(function(error) {
   console.log('Hay un error en Facebook');
@@ -62,21 +84,3 @@ export const authFacebook = () => {
    
   });
 } 
-
-/**
- *Process to enter facebook
- */
-export const supplierDetails = () => {
-  const user = firebase.auth().currentUser;
-
-  if (user != null) {
-    user.providerData.forEach(function (profile) {
-      console.log("Sign-in provider: " + profile.providerId);
-      console.log("  Provider-specific UID: " + profile.uid);
-      console.log("  Name: " + profile.displayName);
-      console.log("  Email: " + profile.email);
-      console.log("  Photo URL: " + profile.photoURL);
-    });
-  }  
-} 
-

@@ -11,7 +11,9 @@ function send() {
   let saveEmail= document.querySelector('#email').value;
   let savePassword= document.querySelector('#password').value;
   let savePassword2= document.querySelector('#password2').value;
-
+  let saveDescription= document.querySelector('#description').value;
+  let savePhoto= document.querySelector('#photo').value;
+  let saveDate = new Date; 
   // Validar datos
   if(saveName == null || saveName == '' || saveName == undefined ){
     msgError ="Completa el campo name";
@@ -31,7 +33,7 @@ function send() {
   }
 
   if(msgError == null) {
-    let usuario = new User(saveName,saveLastName,saveEmail,savePassword);
+    let usuario = new User(saveName,saveLastName,saveEmail,savePassword,saveDescription,saveDate,savePhoto);
 
     registerAuthentication(usuario);
     // Enviar correo de confirmacion
@@ -51,8 +53,8 @@ export const renderSignin = () => {
       <input type="email" id="email" class="input" placeholder="Email">
       <input type="password" id="password" class="input" placeholder="Password">
       <input type="password" id="password2" class="input" placeholder="Confirm password">
-      <input type="hiden" id="descripcion" value="1">
-      <input type="hiden" id="photo" value="1">
+      <input type="hidden" id="description" value="">
+      <input type="hidden" id="photo" value="">
       <span id="errorMsg"> Hay un error, verifica tus datos.</span>
       <input type="button" id="send" class="button" value="Sign in">
       <p>¿Ya tienes una cuenta? <u id="loginLink">Inicia sesión</u></p>
@@ -90,13 +92,13 @@ function showError(campo){
 }
 
 function registerUser (usuario, data) {
-  console.log(data.user.uid);
   dataBase.collection("users").doc(data.user.uid).set({
     "name": usuario.name,
     "lastName": usuario.lastName,
     "email": usuario.email,
     "password": usuario.password,
-    "description": usuario.description, 
+    "description": usuario.description,
+    "date": usuario.date,  
     "photo": usuario.photo
   })
   /*

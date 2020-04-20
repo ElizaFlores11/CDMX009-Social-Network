@@ -43,19 +43,19 @@ const userStatus = () => {
         router('profil');
         // User is signed in.
         var displayName = user.displayName;
-        console.log('displayName: ' + displayName);
+       // console.log('displayName: ' + displayName);
         var email = user.email;
-        console.log('email: ' + email);
+        //console.log('email: ' + email);
         var emailVerified = user.emailVerified;
-        console.log('emailVerified: ' + emailVerified);
+        //console.log('emailVerified: ' + emailVerified);
         var photoURL = user.photoURL;
-        console.log('photoURL: ' + photoURL);
+        //console.log('photoURL: ' + photoURL);
         var isAnonymous = user.isAnonymous;
-        console.log('isAnonymous: ' + isAnonymous);
+        //console.log('isAnonymous: ' + isAnonymous);
         var uid = user.uid;
-        console.log('uid: ' + uid);
+        //console.log('uid: ' + uid);
         var providerData = user.providerData;
-        console.log('providerData: ' + providerData);
+        //console.log('providerData: ' + providerData);
         // ...
       } else {
         console.log("Inactivo");
