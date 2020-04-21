@@ -25,66 +25,56 @@ export const renderContent = () => {
             }
 
             snapshot.forEach(doc => {
-                console.log(doc.data().nombre)
-                console.log(doc.data().email)
-                console.log(doc.data().photo)
-                //console.log(doc.id, '=>', doc.data());
-                let main = document.querySelector('#main');
-               /* <nav class="menu">
+              let main = document.querySelector('#main');
+              let profilView = `
+              <header>
+                <div class="divisor">  
+                      <div class="positiononeheader">
+                        <img class="logo" src="images/logo.png" alt="TripLife">
+                      </div>
+                      <div class="positiontwoheader">
+                      <div class="menu-togle" id="menu">  
+                          <div class="hamburger"></div>
+                        </div>
+                      <nav class="site-nave" id="site-nave">
                         <ul>
                           <li> <a href="#" id="index"> Inicio </a></li>
                           <li> <a href="#" id="profel"> Perfil </a></li>
-                          
                           <li> <a href="#" id="logout"> Cerrar Sesión </a></li>
                       </ul>
-                      </nav>
-                   */
-                let profilView = `
-                <header>
-                  <div class="divisor">
-                    <div class="positiononeheader">
-                      <img class="logo" src="images/logo.png" alt="TripLife">
+                     </nav>
                     </div>
-                    <div class="positiontwoheader">
-                    <nav>   
-                    <div class="iconomenu" id="icono">  
-                        <span>&#9776</span>
                       </div>
-                    <div class="enlaces">
-                      <a href="" id="index"> Inicio </a>
-                       <a href="" id="profil"> Perfil </a>
-                       <a href="" id="logout"> Cerrar </a>
-                    </div>
-                    </nav>
-                    </div>
-                    </div>
-                </header>
-                <div class="divisor">
-                <div class="positionone">
-                <img class="photo" src="${doc.data().photo}" /> 
-            
-                </div>
-                <div class="positiontwo">
-                    <p class="name">${doc.data().name}  ${doc.data().lastName} </p>
-                    <p class="description">${doc.data().description}</p>
-                    </div>
-                </div>
-                <div class="divisor">
-                   <div class="mitad">
-                    <input type="button" id="MyTrips" class="button" value="My Trips">
-                    </div>
-                    <div  class="mitad">
-                    <input type="button" id="TripBoadr" class="button" value="Trip Board">
-                    </div>
-                    </div>
-                  `
-                main.innerHTML = profilView;
-
-                let logout = document.querySelector("#logout");
+              </header>
+              <div class="divisor">
+              <div class="positionone">
+              <img class="photo" src="${doc.data().photo}" /> 
+          
+              </div>
+              <div class="positiontwo">
+                  <p class="name">${doc.data().name}  ${doc.data().lastName} </p>
+                  <p class="description">${doc.data().description}</p>
+                  </div>
+              </div>
+              <div class="divisor">
+                 <div class="mitad">
+                  <input type="button" id="MyTrips" class="button" value="My Trips">
+                  </div>
+                  <div  class="mitad">
+                  <input type="button" id="TripBoadr" class="button" value="Trip Board">
+                  </div>
+                  </div>
+                `
+              main.innerHTML = profilView;
+              let logout = document.querySelector("#logout");
                 logout.addEventListener("click", closeSesion);
+              let menu = document.querySelector("#menu");
+              menu.addEventListener("click", () =>{
+                let siteNav = document.querySelector("#site-nave");
+                siteNav.classList.toggle("site-nave-open");
+              });
                 
-
-            });
+            }); 
         })
         .catch(err => {
             console.log('Error getting documents', err);
