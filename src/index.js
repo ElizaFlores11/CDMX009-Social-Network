@@ -40,7 +40,7 @@ const userStatus = () => {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         console.log("Activo");
-        router('profil');
+        router('content');
         // User is signed in.
         var displayName = user.displayName;
        // console.log('displayName: ' + displayName);
