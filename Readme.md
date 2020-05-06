@@ -1,17 +1,53 @@
-<img src="imgReadme/logo.png">
 # Creando una Red Social
 
 Bienvenida a tu primer proyecto del track de Frontend en Laboratoria.
 
 En este proyecto construirás una red social, cuya temáticas dejaremos a tu elección.
 
-Aquí algunas ideas para inspirarte:
+# TripLife
 
-- Alimentación
-- Feminismo
-- Educación
-- Salud
-- Energías Renovables
+<img src="imgReame/logo.png" alt="TripLife">
+
+## Resumen del Proyecto
+
+TripLife es una red social para viajeros creada para compartir y recordar tus historias, fotos y tips con otros viajeros que disfrutan vivir a través de los viajes.
+
+## Objetivo de TripLife
+* Comparte y recomienda nuevos lugares.
+* Regístrate con facebook o google.
+* Comparte el momento más significativo del lugar en el que estés.
+* Elige quién puede ver lo que compartes.
+* Conoce nuevos lugares a través de otros viajeros.
+* Reacciona a los momentos que más te gusten de otros viajeros. 
+
+## Sketch
+Se generarón ideas en papel para entender al usuario, desde el registro de usuario, registro de proveedores y sobre todo que al usuario se le hiciera facil entender la app.
+
+### Login Sketch
+<img src="imgReame/sketch1.png" alt="TripLife">
+
+### Registro de Usuario Sketch
+<img src="imgReame/sketch2.png" alt="TripLife">
+
+### Entorno de la app Sketch
+<img src="imgReame/sketch3.png" alt="TripLife">
+
+<img src="imgReame/sketch4.png" alt="TripLife">
+
+
+### App de desarrollo
+
+Se trabajo con la parte de diseño desk y responsive. Utilizando los conocimientos de HTMLL5, CSS3, Vanilla JavaScript(ES6+), aprendiendo firebase para el entorno de datos en tiempo real, creando su estructura de datos
+Trabajando con moduliración para llevar un entorno de SPA
+
+<img src="imgReame/prototipo1.png" alt="TripLife">
+
+<img src="imgReame/prototipo1.png" alt="TripLife">
+
+
+
+
+
 
 Las **caraterísticas técnicas** de tu aplicación serán las siguientes:
 - Debe ser una Single-Page Application [SPA](https://dzone.com/articles/how-single-page-web-applications-actually-work) ([versión traducida](https://dzone.com/articles/how-single-page-web-applications-actually-work))
@@ -148,28 +184,28 @@ anterior en la siguiente sección.
 
 ### HTML y CSS
 
-* [ ] [HTML semántico](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
-* [ ] [CSS `flexbox`](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-* [ ] Construir tu aplicación respetando el diseño realizado (maquetación).
+* [x] [HTML semántico](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
+* [x] [CSS `flexbox`](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+* [x] Construir tu aplicación respetando el diseño realizado (maquetación).
 
 ### DOM y Web APIs
 
-* [ ] [Manipulación dinámica del DOM](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n)
-* [ ] [History API](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
+* [x] [Manipulación dinámica del DOM](https://developer.mozilla.org/es/docs/Referencia_DOM_de_Gecko/Introducci%C3%B3n)
+* [x] [History API](https://developer.mozilla.org/es/docs/DOM/Manipulando_el_historial_del_navegador)
 * [ ] [`localStorage`]
 
 ### Javascript
 
-* [ ] [Uso de callbacks](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
-* [ ] [Consumo de Promesas](https://scotch.io/tutorials/javascript-promises-for-dummies#toc-consuming-promises)
-* [ ] Uso ES modules
+* [x] [Uso de callbacks](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
+* [x] [Consumo de Promesas](https://scotch.io/tutorials/javascript-promises-for-dummies#toc-consuming-promises)
+* [x] Uso ES modules
 ([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 | [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
 
 ### Firebase
 
-* [ ] [Firestore](https://firebase.google.com/docs/firestore)
-* [ ] [Firebase Auth](https://firebase.google.com/docs/auth/web/start)
+* [x] [Firestore](https://firebase.google.com/docs/firestore)
+* [x] [Firebase Auth](https://firebase.google.com/docs/auth/web/start)
 * [ ] [Firebase security rules](https://firebase.google.com/docs/rules)
 * [ ] [Uso de onSnapshot](https://firebase.google.com/docs/firestore/query-data/listen)
 | [onAuthStateChanged](https://firebase.google.com/docs/auth/web/start#set_an_authentication_state_observer_and_get_user_data)
@@ -182,22 +218,22 @@ anterior en la siguiente sección.
 
 ### Colaboración en Github
 
-* [ ] Branches
-* [ ] Pull Requests
-* [ ] Tags
+* [x] Branches
+* [x] Pull Requests
+* [x] Tags
 
 ### Organización en Github
 
-* [ ] Projects
-* [ ] Issues
-* [ ] Labels
-* [ ] Milestones
+* [x] Projects
+* [x] Issues
+* [x] Labels
+* [x] Milestones
 
 ### Buenas prácticas de desarrollo
 
-* [ ] Modularización
-* [ ] Nomenclatura / Semántica
-* [ ] Linting
+* [x] Modularización
+* [x] Nomenclatura / Semántica
+* [x] Linting
 
 ***
 
