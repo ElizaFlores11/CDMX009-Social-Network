@@ -220,20 +220,20 @@ anterior en la siguiente sección.
 
 * [x] Branches
 * [x] Pull Requests
-* [x] Tags
+* [ ] Tags
 
 ### Organización en Github
 
 * [x] Projects
-* [x] Issues
-* [x] Labels
-* [x] Milestones
+* [ ] Issues
+* [ ] Labels
+* [ ] Milestones
 
 ### Buenas prácticas de desarrollo
 
 * [x] Modularización
 * [x] Nomenclatura / Semántica
-* [x] Linting
+* [ ] Linting
 
 ***
 
