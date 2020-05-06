@@ -186,7 +186,7 @@ anterior en la siguiente sección.
 
 * [x] [HTML semántico](https://developer.mozilla.org/en-US/docs/Glossary/Semantics#Semantics_in_HTML)
 * [x] [CSS `flexbox`](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
-* [x] Construir tu aplicación respetando el diseño realizado (maquetación).
+* [ ] Construir tu aplicación respetando el diseño realizado (maquetación).
 
 ### DOM y Web APIs
 
@@ -197,7 +197,7 @@ anterior en la siguiente sección.
 ### Javascript
 
 * [x] [Uso de callbacks](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
-* [x] [Consumo de Promesas](https://scotch.io/tutorials/javascript-promises-for-dummies#toc-consuming-promises)
+* [ ] [Consumo de Promesas](https://scotch.io/tutorials/javascript-promises-for-dummies#toc-consuming-promises)
 * [x] Uso ES modules
 ([`import`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import)
 | [`export`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/export))
