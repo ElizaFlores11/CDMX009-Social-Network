@@ -1,4 +1,3 @@
-<img src ="imgReadme/logo.png" style="text-alig">
 # Creando una Red Social
 
 Bienvenida a tu primer proyecto del track de Frontend en Laboratoria.
