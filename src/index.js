@@ -13,22 +13,14 @@ export const router = (route) =>{
   console.log(route)
     switch(route){
       case 'content':
-        //console.log('Entre a la vista de contenido');
-        // let nameSheet = 'signinStyle.css';
         renderContent();
         appendStyleSheet('contentStyle.css');
          break;
-       case 'profil':
-         login.profil();
-         break;
        case 'signin':
-        //console.log('Entre a la vista de registro');
-        // let nameSheet = 'signinStyle.css';
          appendStyleSheet('signinStyle.css');
          renderSignin();
          break;
        default:
-         //let nameSheet = 'loginStyle.css';
          login.renderLogin();
          appendStyleSheet('loginStyle.css');
          break;
@@ -36,15 +28,12 @@ export const router = (route) =>{
 }
 
 export const userStatus = () => {
-  
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         router('content');
       } else {
         router();
       }
-      
     });
 }
-
 userStatus();

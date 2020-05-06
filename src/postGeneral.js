@@ -33,7 +33,7 @@ export const postGeneral = () => {
           <img class='imgListPost' src='${doc.data().imageUrl}'">
         </div>
         <br/>
-        <img  id="${doc.id}" src='iconos/corazon.png' class='iconolike' /> ${doc.data().likes}
+        <img  id='iconolike' name='${doc.id}' src='iconos/corazon.png' class='iconolike' /> ${doc.data().likes}
         </div>`;
       let nodo = document.createElement('div')
           nodo.innerHTML = div;
@@ -41,7 +41,7 @@ export const postGeneral = () => {
         });
         let like = document.querySelectorAll(".iconolike");
         let actionLike = (e) => {
-        let  likeRef = db.collection("posts").doc(e.target.id);
+        let  likeRef = db.collection("posts").doc(e.target.name);
               likeRef.update({
                   likes: firebase.firestore.FieldValue.increment(1)
               })

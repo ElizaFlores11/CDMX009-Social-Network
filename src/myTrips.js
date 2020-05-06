@@ -52,11 +52,11 @@ export const readerMyTrips = () => {
             <br/>
           <div class="iconos">
               <div>
-                <img  id="${doc.id}" src='iconos/corazon.png' class='iconolike' alt="likePost"/> ${doc.data().likes}
+                <img  id='likePost' src='iconos/corazon.png' name='${doc.id}' value class='iconolike' alt="likePost"/> ${doc.data().likes}
               </div>
               <div>
-                <img  id="${doc.id}" src='iconos/edit-tools.png' class='iconoedit' alt="EditPost" /> 
-                <img  id="${doc.id}" src='iconos/interface.png' class='iconodelete' alt="DeletePost" /> 
+                <img  id='editpost' src='iconos/edit-tools.png' name='${doc.id}' class='iconoedit' alt="EditPost" /> 
+                <img  id='deletpost' src='iconos/interface.png' name='${doc.id}' class='iconodelete' alt="DeletePost" /> 
               </div>
           </div>
           </div>`
@@ -69,7 +69,7 @@ export const readerMyTrips = () => {
               let idelete = document.querySelectorAll(".iconodelete");
               
               let actionLike = (e) => {
-              let  likeRef = db.collection("posts").doc(e.target.id);
+                let  likeRef = db.collection("posts").doc(e.target.name);
                     likeRef.update({
                           likes: firebase.firestore.FieldValue.increment(1)
                     })
@@ -78,15 +78,15 @@ export const readerMyTrips = () => {
                     })
                     .catch((error)=> {
                       console.log('No se genero el like');
-                    });
+                    }); 
               };
               like.forEach((actionBtnLike) =>
                 actionBtnLike.addEventListener("click", actionLike)
               );
               edit.forEach((actionBtnEdit) =>
                 actionBtnEdit.addEventListener("click", e => {
-                  console.log("Edit post"); 
-                  console.log(e.target.id);
+                  //console.log("Edit post"); 
+                  //console.log(e.target.id);
                   let userName = 'usuario'; /*aquí se debe jalar el nombre del usuario*/
                   renderPost(userName, uid);
                   editPost(e.target.id);
@@ -94,9 +94,9 @@ export const readerMyTrips = () => {
               );
               idelete.forEach((actionBtnLDelete) =>
                 actionBtnLDelete.addEventListener("click", e =>{
-                  console.log("Delete post"); 
-                  console.log(e.target.id);
-                  deletePost(e.target.id);
+                  //console.log("Delete post"); 
+                  //console.log(e.target.id);
+                  deletePost(e.target.name);
                 })
               );
           })
