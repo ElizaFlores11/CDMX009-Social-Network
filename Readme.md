@@ -6,8 +6,6 @@ En este proyecto construirás una red social, cuya temáticas dejaremos a tu ele
 
 # TripLife
 
-<img src="imgReame/logo.png" alt="TripLife">
-
 ## Resumen del Proyecto
 
 TripLife es una red social para viajeros creada para compartir y recordar tus historias, fotos y tips con otros viajeros que disfrutan vivir a través de los viajes.
