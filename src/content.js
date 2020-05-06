@@ -30,7 +30,6 @@ export const renderContent = () => {
           photouser = imguser; 
         }
         let profilView = `
-        
         <header>
             <div class="positiononeheader">
                 <img class="logo" src="images/logo.png" alt="TripLife">
@@ -93,8 +92,6 @@ export const renderContent = () => {
               });
           let thought = document.querySelector("#thought");
               thought.addEventListener("click", () =>{ 
-                //profil();
-                console.log("Create post"); 
                 let userName = `${doc.data().name}`;
                 renderPost(userName, uiduser);
                 newPost(userName, uiduser, doc.data().photo); 

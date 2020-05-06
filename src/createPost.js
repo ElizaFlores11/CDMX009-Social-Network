@@ -10,40 +10,6 @@ let storage = firebase.storage();
 let imgRef = storage.ref('images');
 let main = document.querySelector('#main');
 
-/*
-const closeSession = () =>{
-  firebase.auth().signOut().then(function(){
-    console.log('Cerrando sesión');
-  })
-  .catch(function(error){
-    console.log(error);
-  })
-}*/
-
-/*
-const clean = () =>{
-  
-  let textareaPost = document.querySelector("#postText");
-  let imagePost = document.querySelector("#imagePost");
-  let statusLabel = document.querySelector("label[for=statusPost]");
-  let sendPostBtn = document.querySelector("#sendPostBtn");
-  let imagesContainer = document.querySelector("#imagesContainer");
-  let statusPost = document.querySelector("#statusPost");
-
-  textareaPost.value = null;
-  sendPostBtn.disabled = true;
-  let image = ``
-  imagesContainer.innerHTML = image;
-  imagePost.value = null;
-  console.log(imagePost.files);
-  let publicStatus = `
-    <i class="fas fa-unlock" title="Público"></i>
-    `
-  statusLabel.innerHTML = publicStatus;
-  statusPost.checked = false;
-   
-}*/
-
 const sendPost = (post) => {
   let modal = document.getElementById("myModal");
   let likes = 0;
@@ -64,7 +30,6 @@ const sendPost = (post) => {
     console.log("Post guardado: " + data);
     modal.style.display = "none";
     renderContent();
-    //clean();
   })
   .catch((error)=> {
     console.log("Error al guardar post: " + error);
@@ -84,14 +49,12 @@ export const newPost = (userName, uid, photoUser) =>{
     
   span.onclick = function() {
     modal.style.display = "none";
-    //clean();
     renderContent();
   }
 
   window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
-      //clean();
       renderContent();
     }
   }
@@ -107,16 +70,7 @@ export const newPost = (userName, uid, photoUser) =>{
   }
 
   textareaPost.addEventListener("input", e => {
-    validate();
-  /*  if (textareaPost.value && textareaPost.value.trim() != ""){
-      sendPostBtn.disabled = false;
-    }else{
-      if (imagePost.files.length != 0){
-        sendPostBtn.disabled = false;
-      }else{
-        sendPostBtn.disabled = true;
-      }
-    }*/  
+    validate();  
   });
 
   imagePost.addEventListener("change", e => {
@@ -138,25 +92,15 @@ export const newPost = (userName, uid, photoUser) =>{
           imagePost.value = null;
           console.log("Usuario quitó img:" + imagePost.value);
           validate();
-          /*
-          if(textareaPost.value == ""){
-            sendPostBtn.disabled = true;
-            console.log("EL text es: " + textareaPost.value);
-          }else{
-            sendPostBtn.disabled = false;
-            console.log("EL text es: " + textareaPost.value);
-          }*/
         }
 
       }
       reader.readAsDataURL(imagePost.files[0]);
       validate();  
-      //sendPostBtn.disabled = false;
     }else{
       let image = ``
       imagesContainer.innerHTML = image;
       validate();
-      //sendPostBtn.disabled = true;
     }
     
   });
@@ -198,7 +142,6 @@ export const newPost = (userName, uid, photoUser) =>{
     if(img){
       let token = idImg+'_'+img.name; 
       console.log("Subiendo img");  
-      //firebase.storage().ref("images").child(img.name).put(img)
       imgRef.child(token).put(img)
       .then(snap => {
         return snap.ref.getDownloadURL();
@@ -258,55 +201,4 @@ export const renderPost = (userName, uid) =>{
   modal.style.display = "block"; 
 }
 
-
-/*
-export const renderProfile = (userName, uid) =>{
-   
-  let profileView = `
-    <p>Welcome ${userName}</p>
-    <p> Congratulations!! This is your personal account.</p>
-    <input id="postBtn" type="button" value="¿Dónde estás hoy, ${userName}?"> <br>
-    <input id="editPostBtn" type="button" value="editPost"><br>
-    <input id="deletePostBtn" type="button" value="deletePost"><br>
-    <input id="logout" type="button" value="Log out">
-  `
-  main.innerHTML = profileView;
-  let logout = document.querySelector("#logout");
-  let postBtn = document.querySelector("#postBtn");
-  let editPostBtn = document.querySelector("#editPostBtn");
-
-  logout.addEventListener("click", closeSession);
-  
-  postBtn.addEventListener("click", e => {
-    renderPost(userName, uid);
-    newPost(userName, uid);
-  });
-
-  editPostBtn.addEventListener("click", e =>{
-    renderPost(userName, uid);
-    editPost(); 
-  });
-
-  deletePostBtn.addEventListener("click", e =>{
-    deletePost(); 
-  });
-  
-}
-
-export const profile = () =>{
-  let uid = firebase.auth().currentUser.uid;
-  console.log(uid);    
-  setTimeout(function(){ 
-    usersRef.doc(uid).get().then(info => {
-      let userInfo = info.data();
-      //console.log(userInfo.email);
-      let userName = `${userInfo.name} ${userInfo.lastName}`;
-      renderProfile(userName, uid);
-      //renderProfile();
-    }).catch((error)=> {
-      console.log("Error al traer info de user: " + error);
-      });
-  }, 500);
-}
-*/
 

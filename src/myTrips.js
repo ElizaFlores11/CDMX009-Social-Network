@@ -24,15 +24,14 @@ export const readerMyTrips = () => {
             mypost.appendChild(nodo);
              
           console.log('No matching documents.');
-          //return; 
         }
        let mypost = document.querySelector('#list-post')
            mypost.innerHTML = ''
            snapshot.forEach(doc => {
             let dateuser = doc.data().date; 
             let date = new Date(dateuser*1000);
-            let mes = date.getMonth()+1; //getMonth devuelve el mes empezando por 0
-            let dia = date.getDate(); //getDate devuelve el dia del mes
+            let mes = date.getMonth()+1; 
+            let dia = date.getDate(); 
             let anyo = date.getYear() - 69;
             let datefinal = dia + '-' + mes + '-' + anyo; 
             let div = `
@@ -85,8 +84,6 @@ export const readerMyTrips = () => {
               );
               edit.forEach((actionBtnEdit) =>
                 actionBtnEdit.addEventListener("click", e => {
-                  //console.log("Edit post"); 
-                  //console.log(e.target.id);
                   let userName = 'usuario'; /*aquí se debe jalar el nombre del usuario*/
                   renderPost(userName, uid);
                   editPost(e.target.id);
@@ -94,15 +91,12 @@ export const readerMyTrips = () => {
               );
               idelete.forEach((actionBtnLDelete) =>
                 actionBtnLDelete.addEventListener("click", e =>{
-                  //console.log("Delete post"); 
-                  //console.log(e.target.id);
                   deletePost(e.target.name);
                 })
               );
           })
           .catch(err => {
             console.log(err); 
-            //console.log('Error getting documents', err);
           });
        }
 }

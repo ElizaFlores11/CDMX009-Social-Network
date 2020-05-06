@@ -12,17 +12,6 @@ html, body{
    
 }
 
-/*
-body {
-    border: 1px solid black;
-}
-section {
-    border: 1px solid blue;
-}
-div{
-    border: 0.5px solid red;
-}*/
-
 #main{
    box-sizing: border-box;
    
@@ -51,7 +40,6 @@ header{
 /**Menú**/
 .menu-togle{
     display: none;
-    /*background-color: #F3BA00;*/
     padding: 1em;
     top: 5em;
     border-radius: 5px;
@@ -77,11 +65,6 @@ header{
     transform: translateY(3px);
 }
 
-/*
-.site-nav{
-   background-color: #F3BA00;
-}*/
-
 .site-nav-open{
     height:auto;
 }
@@ -92,14 +75,6 @@ header{
     padding: 0;
     list-style: none;
 }
-
-/*
-.site-nav li{
-    border-right: 1px solid #F3BA00;
-}
-.site-nav li:last-child{
-    border-right: none;
-}*/
 
 .site-nav a{
     color: black;
@@ -123,7 +98,6 @@ header{
    display: flex;
    flex-direction: row;
    justify-content: space-evenly;
-  /* justify-content: center;*/
 }
 
 .position-photo{
@@ -133,7 +107,6 @@ header{
 .photo{
     width: 200px;
     border-radius: 150px;
-   /* margin-left: 100px;*/
     padding: 20px;
 }
 
@@ -197,7 +170,6 @@ header{
     height: 70px;
     margin:auto;
     padding: auto;
-  /*border: 1px solid black;*/
     position: relative;
     
 }
@@ -234,7 +206,6 @@ header{
     width: 80%;
     border-radius: 10px;
     padding: 20px;
-    /*border: 1px solid #008F99;*/
     margin: 0 auto;
     margin-top: 15px;
     margin-bottom: 15px;
@@ -243,7 +214,7 @@ header{
 }
 
 /*Modificaciones para la ventana de editar perfil*/
-.editProfile { /*changeGaby*/
+.editProfile { 
     width: 100%;
     border-radius: 10px;
     padding: 20px;
@@ -271,7 +242,7 @@ header{
     width: 100%;
     border-radius: 150px
 }
-.selectImg{/*nuevo cambio*/
+.selectImg{
     padding-left: 15px;
     border-radius: 30px;
     width: 250px;
@@ -293,7 +264,6 @@ header{
     border: #E1E8EC;
 }
 .descriptionUser {
-    /*box-sizing: border-box;*/
     padding: 10px;
     border-radius: 15px;
     width: 250px;
@@ -351,7 +321,6 @@ header{
 
 .imgListPost{
     width:400px;
-  /*  padding-left: 100px;*/
     padding: auto;
 }
 
@@ -375,17 +344,17 @@ header{
 /****************/
 /* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
   }
  
   /* Modal Content */
@@ -477,7 +446,6 @@ header{
 
   
   #postText{
-    /*width: 80%;*/
     height: 8em;
     padding: 1em;
     border-radius:10px;
@@ -490,8 +458,7 @@ header{
   .icons{
     margin: 0.5em 1em;
     display:flex;
-    /*justify-content: space-around;*/
-  }
+}
 
   label{
     margin:0;

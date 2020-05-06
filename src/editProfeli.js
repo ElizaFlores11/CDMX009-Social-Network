@@ -65,7 +65,6 @@ export const renderEditProfeli = () => {
        })
        .catch(err => {
            console.log(err); 
-           //console.log('Error getting documents', err);
        });
    }   
 }
