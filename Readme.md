@@ -14,13 +14,13 @@ TripLife es una red social para viajeros creada para compartir y recordar tus hi
 ## Sketch.
 Se crearon ides en papel para generar las historias de usuario, como login, regisro de usuario y el entorno de la aplicacion.
 
-<img src="imgReadme/sckech1.png" alt="TripLife" />
+<img src="imgReadme/skech1.png" alt="TripLife" />
 
-<img src="imgReadme/sckech2.png" alt="TripLife" />
+<img src="imgReadme/skech2.png" alt="TripLife" />
 
-<img src="imgReadme/sckech3.png" alt="TripLife" />
+<img src="imgReadme/skech3.png" alt="TripLife" />
 
-<img src="imgReadme/sckech4.png" alt="TripLife" />
+<img src="imgReadme/skech4.png" alt="TripLife" />
 
 ## Prototipo de la aplicación.
 Creación de la aplicación para entorno desktop y mobile. Con las herramientas de Html5, CSS3 y Vainilla JavaScript(ES6)
